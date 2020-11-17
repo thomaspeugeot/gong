@@ -4,12 +4,13 @@
     - [go](#go)
     - [swagger](#swagger)
     - [angular](#angular)
-  - [Description](#description)
+  - [Description of a gong application](#description-of-a-gong-application)
   - [An example](#an-example)
 
 # Gong
 
-*insert image of the bookstore*
+![Example of a generated application with gong](docs/images/bookstore-client.png)
+*Example of a generated application with gong*
 
 ## About Gong
 
@@ -27,10 +28,10 @@ What is fun and boring stuff?
   - maintaining the above boring stuff
 
 Gong is a set of 2 compilers:
-- the first compiler compiles the business logic written in `go` and generates the boring code in `go` and `ng`
-- the second compiler generates UML diagrams from `go` code
+- `gongc`, a compiler that compiles the business logic written in `go` and generates the boring code in `go` and `ng`
+- `gongdoc`, a compiler that generates a web site to view UML diagrams from `go` code, (`gongdoc` is similar to `godoc`)
 
-Gong stands for "go + ng", a go backend and an angular frontend.
+Gong stands for "`go` + `ng`", a go backend and an angular frontend.
 
 ## Prerequisite
 
@@ -70,20 +71,21 @@ The `ng` command is used by different gong programs.
 npm install -g @angular/cli
 ```
 
-## Description
-
-Gong is a programming langage that is a subset of the go langage. 
-
-A set of go `foo/go/models` go package written following the *gong* langage constraints can be compiled by the `gongc` compiler into a stack of integrated component in go for the backend and angular for the front end. 
-
-This stack can be packaged ino a reusable gong library to be used in another full stack developpemnent (an example is provided).
-
-- a `foo/go/orm` package, leveraging gorm, the fantastic go ORM, for the persistance into GORM supported database (sqlite3 in memory, sqlite3 file, postgres, ...)
-- a `foo/go/controllers` package, leveraging the gin framework, an HTTP web framework written in Go (Golang)
-- a `foo/go/controllers/foo.yaml` open api 2.0 interface definition (thks to go-swagger), it provides a RESTful interface for  developing and consuming an API of the gong package
+## Description of a gong application
 
 
-- a `foo/ng/projects/foo` angular service library for accessing gong object with some an angular material library with commonly used material components: table, editor, presentation, splitter presentation, arborescence presentation
+A go package (for instance `<path>/go/models` ) written following the `gong` langage constraints can be compiled by the `gongc` compiler into a stack of integrated components:
+- a set of `go` packages for the backend
+- an `angular` library for the front end. 
+
+This stack can be packaged into a reusable `gong` library to be used in another full stack developpemnent (a *bookstore* example is provided in the repository).
+
+- a `<path>/go/orm` package, leveraging gorm, the fantastic go ORM, for the persistance into GORM supported database (sqlite3 in memory, sqlite3 file, postgres, ...)
+- a `<path>/go/controllers` package, leveraging the gin framework, an HTTP web framework written in Go (Golang)
+- a `<path>/go/controllers/<path>.yaml` open api 2.0 interface definition (thks to go-swagger), it provides a RESTful interface for  developing and consuming an API of the gong package
+
+
+- a `<path>/ng/projects/<path>` angular service library for accessing gong object with some an angular material library with commonly used material components: table, editor, presentation, splitter presentation, arborescence presentation
 
 if a gong variable data is created on the backend, a constraint is to register all instances on a store.
 
