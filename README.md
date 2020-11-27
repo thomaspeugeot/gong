@@ -29,8 +29,8 @@ What is *fun* and *boring* in full stack development ?
   - maintaining *boring* stuff
 
 Gong is a set of 2 compilers:
-- `gongc`, a compiler that compiles the business logic written in `go` and generates the *boring* stuff in `go` and `ng`.
-- `gongdoc`, a compiler that generates the UML documentation, a web site to view UML diagrams from `go` code that is similar to `godoc` in its functionning.
+- `gongc`, a compiler that compiles the business logic written in `go`, extracts some elements in a `gong` language and generates the *boring* stuff in `go` and `ng`.
+- `gongdoc`, a compiler that generates the UML documentation, a web site to view UML diagrams from `gong` code (the subset of `go` that is understood b `gongc`). `gongdoc`  is similar to `godoc` in its functionning ad also generates `svg` files from the diagram definition.
 
 Gong stands for "`go` + `ng`", a go backend and an angular frontend.
 
@@ -55,7 +55,7 @@ cd "$dir"
 go install ./cmd/swagger
 ```
 
-on windows with powershell
+on windows with powershell, creates and go into `go-swagger`
 ```bash
 git clone https://github.com/go-swagger/go-swagger
 go install ./go-swagger/cmd/swagger
@@ -155,3 +155,13 @@ ng/                 (the application front end, in angular ...
     src/app
         app.component.html   (the fun part)
 ```
+
+# Gong elements
+
+## The gong langage
+
+Here a svg of the gong langage s sbset of `go`
+
+## A gong stack
+
+All the elements of gong stack
